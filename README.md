@@ -38,7 +38,7 @@ This repository contains the plugin configuration and instructions. Revnu's host
 
 ## Development
 
-See [TESTING.md](TESTING.md) for package validation, isolated MCP checks and real Cursor acceptance steps. Run the package validator with Node 22 or later:
+See [TESTING.md](TESTING.md) for package validation, isolated MCP checks and real Cursor acceptance steps. Validation permits only the 14 public plugin files. Keep internal reports, credentials, customer data and backend code outside this repository. Run the package validator with Node 22 or later:
 
 ```sh
 node scripts/validate-plugin.mjs

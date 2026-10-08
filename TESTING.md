@@ -1,6 +1,6 @@
 # Validate and test the Cursor plugin
 
-Package validation, a working MCP server, Cursor skill behavior and marketplace approval are separate checks. Record the version, host version, case count, actual outcomes and any untested paths for each release. Keep credentials and customer data out of evidence.
+Package validation, a working MCP server, Cursor skill behavior and marketplace approval are separate checks. Keep internal release records and raw evidence in a private workspace. Never publish credentials, customer data or internal logs here.
 
 ## Validate the release package
 
@@ -10,7 +10,7 @@ From this repository:
 node scripts/validate-plugin.mjs
 ```
 
-This checks the single-plugin manifest, hosted MCP configuration, skill names and frontmatter, logo and local Markdown references. It rejects files outside the package and common private/build files. GitHub Actions runs the same check. Inspect the tracked file list before publishing; the hosted server implementation and development credentials belong outside this repository.
+This checks the single-plugin manifest, hosted MCP configuration, skill names and frontmatter, logo and local Markdown references. It allows only the 14 public plugin files and rejects symlinks and common private/build files. GitHub Actions runs the same check. Inspect the tracked file list before publishing; the hosted server implementation and development credentials belong outside this repository.
 
 ## Install a local copy
 

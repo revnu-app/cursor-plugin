@@ -4,6 +4,22 @@ import { dirname, isAbsolute, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
+const publishedFiles = new Set([
+  ".cursor-plugin/plugin.json",
+  ".github/workflows/validate.yml",
+  ".gitignore",
+  "LICENSE",
+  "README.md",
+  "TESTING.md",
+  "assets/logo.svg",
+  "mcp.json",
+  "references/account-and-jobs.md",
+  "scripts/validate-plugin.mjs",
+  "skills/revnu-get-started/SKILL.md",
+  "skills/revnu-grow/SKILL.md",
+  "skills/revnu-results/SKILL.md",
+  "skills/revnu-review/SKILL.md",
+]);
 const read = (path) => readFileSync(path, "utf8");
 const json = (path) => JSON.parse(read(path));
 const inside = (base, path) => {
@@ -65,6 +81,8 @@ function checkFiles(directory) {
       checkFiles(path);
       continue;
     }
+    const packagePath = relative(root, path).split("\\").join("/");
+    assert(publishedFiles.has(packagePath), `file outside public package: ${packagePath}`);
     files++;
     if (!entry.name.endsWith(".md")) continue;
     for (const match of read(path).matchAll(/\[[^\]]*\]\(([^)]+)\)/g)) {
@@ -74,6 +92,7 @@ function checkFiles(directory) {
   }
 }
 checkFiles(root);
+assert.equal(files, publishedFiles.size, "public package file list is incomplete");
 for (const name of ["README.md", "TESTING.md", "LICENSE"]) inside(root, name);
 console.log(
   `Valid Revnu plugin: ${skillNames.size} skills, 1 hosted OAuth MCP, ${files} files; all local references resolve.`,
