@@ -1,12 +1,23 @@
 {
   "name": "revnu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Your growth hire in Cursor. Hand Revnu customer acquisition jobs across outbound, ads and SEO, review what ships, and see the results.",
-  "author": { "name": "Revnu" },
+  "author": {
+    "name": "Revnu"
+  },
   "homepage": "https://revnu.com/mcp",
   "repository": "https://github.com/revnu-app/cursor-plugin",
   "license": "MIT",
-  "keywords": ["growth", "marketing", "customers", "outbound", "ads", "seo", "gtm", "revnu"],
+  "keywords": [
+    "growth",
+    "marketing",
+    "customers",
+    "outbound",
+    "ads",
+    "seo",
+    "gtm",
+    "revnu"
+  ],
   "logo": "assets/logo.svg",
   "skills": "./skills/",
   "mcpServers": "./mcp.json"

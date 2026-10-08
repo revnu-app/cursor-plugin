@@ -5,7 +5,7 @@ description: Set up or connect Revnu to grow a business from Cursor. Use when th
 
 # Set up Revnu
 
-Read [account and job handling](../../references/account-and-jobs.md), then call `whoami` and `setup_status`. Resume the returned stage instead of restarting setup. If the stage is `done`, confirm the connected business and move to the customer's job.
+Before any other Revnu tool in a new conversation, call `whoami` and confirm the business matches the request. Read [account and job handling](../../references/account-and-jobs.md), then call `whoami` and `setup_status`. Resume the returned stage instead of restarting setup. If the stage is `done`, confirm the connected business and move to the customer's job.
 
 Follow `setup_status.next` using these stages:
 

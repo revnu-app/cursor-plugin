@@ -5,7 +5,7 @@ description: Review work prepared by Revnu and carry out the customer's decision
 
 # Review and act on prepared work
 
-Read [account and job handling](../../references/account-and-jobs.md). Call `review_list`, then `review_get` for the card being discussed. Read its current `status`, `actions`, payload and primary label. Use actual returned IDs and verbs.
+Before any other Revnu tool in a new conversation, call `whoami` and confirm the business matches the request. Read [account and job handling](../../references/account-and-jobs.md). Call `review_list`, then `review_get` for the card being discussed. Read its current `status`, `actions`, payload and primary label. Use actual returned IDs and verbs.
 
 Show enough detail for the decision: recipient and text for email, destination and content for a post, current and proposed spend for a budget, or the question and choices for a setup decision. If Cursor renders the Revnu MCP App, its cards can supply that view; otherwise present the same information in chat. Resolve an ambiguous reference before taking action.
 
